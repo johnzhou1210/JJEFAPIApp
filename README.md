@@ -1,4 +1,5 @@
 # Team JJEF API App
+- CSCI 39548 04 PWD Assignment 5
 
 # APIs Used
 - Jikan REST API
