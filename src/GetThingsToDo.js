@@ -11,7 +11,7 @@ function GetThingsToDo() {
     accessibility: null
   });
 
-  const [typeInput, setTypeInput] = useState(0);
+  const [typeInput, setTypeInput] = useState("");
   const [activity, setActivity] = useState(null);
 
   const endpoint = "https://www.boredapi.com/api/activity?type=";
