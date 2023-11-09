@@ -1,6 +1,9 @@
 import JikanComponent from "./JikanComponent";
+
 import GetThingsToDo from "./GetThingsToDo";
 import CatImage from "./CatImage"
+
+import PokeComponent from "./PokeComponent"
 import './styles.css'
 
 export default function App() {
