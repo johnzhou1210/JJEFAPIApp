@@ -15,9 +15,9 @@ function CatImage() {
   };
 
   return (
-    <div>
+    <div className="card-short">
       <h2>Random Cat Image</h2>
-      <button onClick={fetchRandomCatImage}>
+      <button className="card-large-button" onClick={fetchRandomCatImage}>
         Get Random Cat
       </button>
       {catImageUrl && (
