@@ -18,5 +18,5 @@
 - PokeAPI
   - API Documentation: https://pokeapi.co/docs/graphql
   - https://github.com/PokeAPI/pokeapi
-  - imagehere
-  - Pokemon API used to fetch random pokemon.
+  - ![image](https://github.com/johnzhou1210/JJEFAPIApp/assets/73344661/cea6949e-a732-4819-bfea-215394af0a9e)
+  - Pokemon API used to fetch pokemon randomly.
