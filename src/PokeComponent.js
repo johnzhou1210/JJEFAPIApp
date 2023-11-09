@@ -4,9 +4,9 @@ import "./styles.css";
 export default function App() {
   const [pokemon, setPokemon] = useState(null);
 
-  //Function will generate random number between 1 and 152
+  //Function will generate random number between 1 and 151
   function getRandomPokemonId() {
-    return Math.floor(Math.random() * 152) + 1;
+    return Math.floor(Math.random() * 151) + 1;
   }
 
   //Function will capitalize the first letter of a string
