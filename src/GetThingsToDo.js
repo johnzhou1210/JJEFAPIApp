@@ -37,9 +37,9 @@ function GetThingsToDo() {
       <div className="card-title">
         Are you bored? Look Below!
       </div>
-      <>
+      <div className='card-statement'>
         {activity && <p>{activity}</p>}
-      </>
+      </div>
       <select className="card-large-button" onChange={changeSelection} value={typeInput}>
           <option value="">random</option> 
           <option value="education">learning</option> 

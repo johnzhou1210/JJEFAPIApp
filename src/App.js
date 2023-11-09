@@ -13,6 +13,7 @@ export default function App() {
       <div className="body">
 		    <JikanComponent />
         <GetThingsToDo />
+        <PokeComponent />
         <CatImage/>
       </div>
     </div>

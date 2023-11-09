@@ -14,16 +14,16 @@ export default function JikanComponent() {
   }
 
   return (
-    <>
-      <div className="card">
+    <div className="card">
+      <div className="card-contents">
         <>
           <MALResult anime={anime} />
         </>
       </div>
-      <button className="card-large-button" onClick={handleGetRandomAnime}>
+      <button className="card-large-button2" onClick={handleGetRandomAnime}>
         <strong>Click for a random anime!</strong>
       </button>
-    </>
+    </div>
   );
 }
 
@@ -47,7 +47,7 @@ function MALResult({ anime }) {
             <img
               src={anime.data?.images?.jpg?.image_url}
               alt={anime.data?.images?.jpg?.image_url}
-              height={300}
+              style={{ width: "40%" }}
             ></img>
           )}
         </a>
