@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import "./styles.css";
 
 function GetThingsToDo() {
   const [boredJSONData, setboredJSONData] = useState({
@@ -32,9 +33,14 @@ function GetThingsToDo() {
   }
 
   return (
-    <>
-      {activity && <p>{activity}</p>}
-      <select onChange={changeSelection} value={typeInput}>
+    <div className="card-short">
+      <div className="card-title">
+        Are you bored? Look Below!
+      </div>
+      <div className="card-description-center">
+        {activity && <p>{activity}</p>}
+      </div>
+      <select className="card-large-button" onChange={changeSelection} value={typeInput}>
           <option value="">random</option> 
           <option value="education">learning</option> 
           <option value="recreational">for fun</option> 
@@ -46,8 +52,8 @@ function GetThingsToDo() {
           <option value="music">music</option> 
           <option value="busywork">if you're really bored</option> 
       </select>
-      <button onClick={() => {handleGetActivity()}}>Get an activity</button>
-    </>
+      <button className="card-large-button" onClick={() => {handleGetActivity()}}>Get an activity</button>
+    </div>
   )
 }
 
