@@ -1,6 +1,7 @@
 {
   "name": "jjef-work-2",
   "version": "1.0.0",
+  "homepage": "https://johnzhou1210.github.io/JJEFAPIApp",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
