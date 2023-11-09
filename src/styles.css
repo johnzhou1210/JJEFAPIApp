@@ -56,9 +56,3 @@
   overflow: auto;
   border-radius: 25px;
 }
-
-.card-description-short {
-  padding: 3dvh;
-  text-align: middle;
-  text-indent: 1vw;
-}
