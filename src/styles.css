@@ -43,3 +43,16 @@
   font-size: calc(15px + 2vmin);
   padding: 3dvh;
 }
+
+.card-short {
+  padding-top: 2dvh; 
+  padding-bottom: 2.5dvh;
+  display: flexbox;
+  text-align: center;
+  width: 30vw;
+  height: 17vw;
+  background-color: rgb(255, 211, 170);
+  word-wrap: break-word;
+  overflow: auto;
+  border-radius: 25px;
+}
