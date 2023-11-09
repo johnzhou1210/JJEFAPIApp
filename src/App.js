@@ -1,5 +1,6 @@
 import JikanComponent from "./JikanComponent";
 import GetThingsToDo from "./GetThingsToDo";
+import CatImage from "./CatImage"
 import './styles.css'
 
 export default function App() {
@@ -10,6 +11,9 @@ export default function App() {
 		    <JikanComponent />
         <GetThingsToDo />
       </div>
+	</div>
+        <CatImage/>
+    </div>
     </div>
   );
 }
