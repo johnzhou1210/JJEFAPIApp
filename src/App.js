@@ -10,10 +10,8 @@ export default function App() {
       <div className="body">
 		    <JikanComponent />
         <GetThingsToDo />
-      </div>
-	</div>
         <CatImage/>
-    </div>
+      </div>
     </div>
   );
 }
