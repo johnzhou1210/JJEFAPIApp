@@ -15,14 +15,14 @@ function CatImage() {
   };
 
   return (
-    <div className="card-short">
+    <div className="card-2">
       <h2>Random Cat Image</h2>
       <button className="card-large-button" onClick={fetchRandomCatImage}>
         Get Random Cat
       </button>
       {catImageUrl && (
         <div>
-          <img src={catImageUrl} width={250} height={250} alt="Random Cat" />
+          <img className="card-image" src={catImageUrl} style={{ width: "70%" }} alt="Random Cat" />
         </div>
       )}
     </div>

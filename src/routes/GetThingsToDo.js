@@ -33,12 +33,12 @@ function GetThingsToDo() {
   }
 
   return (
-    <div className="card-short">
-      <div className="card-title">
+    <div className="card-2">
+      <h1 className="card-title">
         Are you bored? Look Below!
-      </div>
+      </h1>
       <div className='card-statement'>
-        {activity && <p>{activity}</p>}
+        {<div className='card-description'></div> && <p className='card-description'>{activity == null ? "Activity will appear here." : activity}</p>}
       </div>
       <select className="card-large-button" onChange={changeSelection} value={typeInput}>
           <option value="">random</option> 
