@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import "./styles.css";
+import "../styles.css";
 
 function GetThingsToDo() {
   const [boredJSONData, setboredJSONData] = useState({
