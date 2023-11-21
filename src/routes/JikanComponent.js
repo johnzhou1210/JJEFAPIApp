@@ -17,14 +17,14 @@ export default function JikanComponent() {
 
   return (
     <div className="card">
+      <button className="card-large-button2" onClick={handleGetRandomAnime}>
+        <strong>Click for a random anime!</strong>
+      </button>
       <div className="card-contents">
         <>
           <MALResult anime={anime} />
         </>
       </div>
-      <button className="card-large-button2" onClick={handleGetRandomAnime}>
-        <strong>Click for a random anime!</strong>
-      </button>
     </div>
   );
 }
@@ -74,7 +74,7 @@ function MALResult({ anime }) {
   );
 }
 
-function GenreList({anime}) {
+function GenreList({ anime }) {
   return (
     <>
       {anime.data?.genres?.map((elem, indx) => (
