@@ -35,26 +35,28 @@ export default function App() {
       });
   }
 
-  return (
-    <div className="App">
-      <div className="card">
-        {pokemon ? (
-          <div>
-            <img
-              className="card-image"
-              src={pokemon.image}
-              alt={pokemon.name}
-              style={{ width: "70%" }}
-            />
-            <h2 className="card-title">{pokemon.name}</h2>
-          </div>
-        ) : (
-          <p></p>
-        )}
-        <button className="card-large-button2" onClick={fetchRandomPokemon}>
-          <strong>Click for a Random Pokemon!</strong>
-        </button>
-      </div>
-    </div>
-  );
+    return (
+        <div className="App">
+            <div className="card">
+                <button className="card-large-button2" onClick={fetchRandomPokemon}>
+                    <strong>Click for a Random Pokemon!</strong>
+                </button>
+
+                {pokemon ? (
+                    <div>
+                        <img
+                            className="card-image"
+                            src={pokemon.image}
+                            alt={pokemon.name}
+                            style={{ width: "70%" }}
+                        />
+                        <h2 className="card-title">{pokemon.name}</h2>
+                    </div>
+                ) : (
+                    <p></p>
+                )}
+            </div>
+        </div>
+    );
+
 }
