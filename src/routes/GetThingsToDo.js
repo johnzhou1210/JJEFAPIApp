@@ -29,7 +29,7 @@ function GetThingsToDo() {
         Are you bored? Look Below!
       </h1>
       <div className='card-statement'>
-        {<p className='card-description'>{getBoredPhrase}</p>}
+        <p className='card-description'>{getBoredPhrase}</p>
       </div>
       <select className="card-large-button" onChange={changeSelection} value={typeInput}>
           <option value="">random</option> 
