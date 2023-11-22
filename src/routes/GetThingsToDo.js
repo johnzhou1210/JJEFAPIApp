@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { savePreviousPhrase, showNextPhrase, phrase } from '../app/getThingsToDoSlice';
+import { showNextPhrase } from '../app/getThingsToDoSlice';
 
 import { useState, useEffect } from 'react';
 import "../styles.css";
@@ -7,16 +7,6 @@ import "../styles.css";
 function GetThingsToDo() {
   const getBoredPhrase = useSelector((state) => state.boredPhrase.phrase);
   const dispatch = useDispatch();
-
-  // const [boredJSONData, setboredJSONData] = useState({
-  //   activity: null,
-  //   type: null,
-  //   participants: null,
-  //   price: null,
-  //   link: null,
-  //   key: null,
-  //   accessibility: null
-  // });
 
   const [typeInput, setTypeInput] = useState("");
 
