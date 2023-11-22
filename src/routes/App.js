@@ -7,7 +7,6 @@ import PokeComponent from "./PokeComponent";
 
 import "../styles.css";
 import { Outlet, Link } from "react-router-dom";
-import { useSelector } from 'react-redux';
 
 export default function App() {
 
@@ -38,7 +37,7 @@ export default function App() {
           <Outlet />
           <div className="card-3">
             <p>Number of times cat pictures are shown: {catImageCount}</p>
-            <h2>Things You Clicked Before</h2>
+            <h2>Bored Companion History</h2>
             {getPrevBoredPhrases.map((phrase) => <p>{phrase}</p>)}
           </div>
           
