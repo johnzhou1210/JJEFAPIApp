@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import JikanComponent from "./JikanComponent";
 import GetThingsToDo from "./GetThingsToDo";
@@ -9,7 +9,6 @@ import "../styles.css";
 import { Outlet, Link } from "react-router-dom";
 
 export default function App() {
-  const getBoredPhrase = useSelector((state) => state.boredPhrase.phrase);
   const getPrevBoredPhrases = useSelector((state) => state.boredPhrase.phrases);
 
   return (
