@@ -1,3 +1,5 @@
+import { useSelector, useDispatch } from 'react-redux';
+
 import JikanComponent from "./JikanComponent";
 import GetThingsToDo from "./GetThingsToDo";
 import CatImage from "./CatImage";
@@ -7,6 +9,9 @@ import "../styles.css";
 import { Outlet, Link } from "react-router-dom";
 
 export default function App() {
+  const getBoredPhrase = useSelector((state) => state.boredPhrase.phrase);
+  const getPrevBoredPhrases = useSelector((state) => state.boredPhrase.phrases);
+
   return (
     <div className="App">
       <div className="sidebar">
@@ -31,6 +36,11 @@ export default function App() {
           <Outlet />
           <div className="card-3">
             We can add some functionality involving redux here
+            
+            <h2>Things You Clicked Before</h2>
+
+            {getPrevBoredPhrases.map((phrase) => <p>{phrase}</p>)}
+
           </div>
           
         </div>
