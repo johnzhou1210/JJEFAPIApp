@@ -2,18 +2,33 @@ import React from "react";
 import { useState } from "react";
 import "../styles.css";
 
+import { useSelector, useDispatch } from 'react-redux';
+import { setCurrentAnime } from '../app/jikanSlice';
+
 export default function JikanComponent() {
-  const [anime, setAnime] = useState({
-    data: { title: "Anime Randomizer", synopsis: "Synopsis will appear here." },
-  });
+  // const [anime, setAnime] = useState({
+  //   data: { title: "Anime Randomizer", synopsis: "Synopsis will appear here." },
+  // });
+
   const endpoint = "https://api.jikan.moe/v4/random/anime";
+  const dispatch = useDispatch();
+  const anime = useSelector(state => state.animeHistory.currentAnime);
 
   function handleGetRandomAnime() {
     fetch(endpoint)
       .then((response) => response.json())
-      .then((responseJson) => setAnime(responseJson))
+      .then((responseJson) =>  dispatch(setCurrentAnime(responseJson))  )
       .catch((error) => console.error(error));
+      
   }
+
+  // function handleGetRandomAnime() {
+  //   fetch(endpoint)
+  //     .then((response) => response.json())
+  //     .then((responseJson) =>  setAnime(responseJson))
+  //     .catch((error) => console.error(error));
+      
+  // }
 
   return (
     <div className="card">

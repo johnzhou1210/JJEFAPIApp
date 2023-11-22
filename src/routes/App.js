@@ -11,8 +11,9 @@ import { Outlet, Link } from "react-router-dom";
 export default function App() {
 
   const getPrevBoredPhrases = useSelector((state) => state.boredPhrase.phrases);
-    const catImageCount = useSelector((state) => state.catImage.catImageCount);
-    const foundPokeCount = useSelector((state) => state.poke.foundPokeCount);
+  const catImageCount = useSelector((state) => state.catImage.catImageCount);
+  const getAnimeHistory = useSelector((state) => state.animeHistory.log);
+  const foundPokeCount = useSelector((state) => state.poke.foundPokeCount);
 
   return (
     <div className="App">
@@ -37,13 +38,14 @@ export default function App() {
         <div className="info">
           <Outlet />
           <div className="card-3">
-            <p>Number of times cat pictures are shown: {catImageCount}</p>
-            <h2>Bored Companion History</h2>
-            {getPrevBoredPhrases.map((phrase) => <p>{phrase}</p>)}
+            <h2>Number of times cat pictures are shown: {catImageCount}</h2>
             <h2>Pokemon Randomizer!</h2>
             <p>Number of Pokemon found: {foundPokeCount}</p>
+            <h2>Bored Companion History</h2>
+            {getPrevBoredPhrases.map((phrase) => <p>{phrase}</p>)}
+            <h2>Anime History</h2>
+            {getAnimeHistory.map((entry) => <p>{entry?.data?.title}</p> )}
           </div>
-          
         </div>
       </div>
     </div>
