@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import "../styles.css";
 
 function GetThingsToDo() {
-  const getBoredPhrase = useSelector((state) => {state.boredPhrase.phrase});
+  const getBoredPhrase = useSelector((state) => state.boredPhrase.phrase);
   const dispatch = useDispatch();
 
   // const [boredJSONData, setboredJSONData] = useState({
