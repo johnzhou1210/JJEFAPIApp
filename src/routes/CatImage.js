@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchRandomCatImage } from "../app/catImageSlice.js";
 
 function CatImage() {
-  const [catImageUrl, setCatImageUrl] = useState(null);
+  const dispatch = useDispatch();
+  const catImageUrl = useSelector((state) => state.catImage.catImageUrl);
+  
 
-  const fetchRandomCatImage = () => {
+  const handleFetchRandomCatImage = () => {
     fetch("https://api.thecatapi.com/v1/images/search")
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         if (data.length > 0) {
-          setCatImageUrl(data[0].url);
+          dispatch(fetchRandomCatImage({ catImageUrl: data[0].url }));
         }
       })
       .catch((error) => console.error(error));
@@ -17,12 +21,18 @@ function CatImage() {
   return (
     <div className="card-2">
       <h2>Random Cat Image</h2>
-      <button className="card-large-button" onClick={fetchRandomCatImage}>
+      <button className="card-large-button" onClick={handleFetchRandomCatImage}>
         Get Random Cat
       </button>
+      
       {catImageUrl && (
         <div>
-          <img className="card-image" src={catImageUrl} style={{ width: "70%" }} alt="Random Cat" />
+          <img
+            className="card-image"
+            src={catImageUrl}
+            style={{ width: "70%" }}
+            alt="Random Cat"
+          />
         </div>
       )}
     </div>
