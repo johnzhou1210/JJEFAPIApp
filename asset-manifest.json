@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/JJEFAPIApp/static/css/main.4bc1d030.css",
-    "main.js": "/JJEFAPIApp/static/js/main.cdbe46af.js",
+    "main.css": "/JJEFAPIApp/static/css/main.a2dee434.css",
+    "main.js": "/JJEFAPIApp/static/js/main.7cbb1e0a.js",
     "index.html": "/JJEFAPIApp/index.html",
-    "main.4bc1d030.css.map": "/JJEFAPIApp/static/css/main.4bc1d030.css.map",
-    "main.cdbe46af.js.map": "/JJEFAPIApp/static/js/main.cdbe46af.js.map"
+    "main.a2dee434.css.map": "/JJEFAPIApp/static/css/main.a2dee434.css.map",
+    "main.7cbb1e0a.js.map": "/JJEFAPIApp/static/js/main.7cbb1e0a.js.map"
   },
   "entrypoints": [
-    "static/css/main.4bc1d030.css",
-    "static/js/main.cdbe46af.js"
+    "static/css/main.a2dee434.css",
+    "static/js/main.7cbb1e0a.js"
   ]
 }
