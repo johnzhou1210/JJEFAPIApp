@@ -11,7 +11,8 @@ import { Outlet, Link } from "react-router-dom";
 export default function App() {
 
   const getPrevBoredPhrases = useSelector((state) => state.boredPhrase.phrases);
-  const catImageCount = useSelector((state) => state.catImage.catImageCount);
+    const catImageCount = useSelector((state) => state.catImage.catImageCount);
+    const foundPokeCount = useSelector((state) => state.poke.foundPokeCount);
 
   return (
     <div className="App">
@@ -39,6 +40,8 @@ export default function App() {
             <p>Number of times cat pictures are shown: {catImageCount}</p>
             <h2>Bored Companion History</h2>
             {getPrevBoredPhrases.map((phrase) => <p>{phrase}</p>)}
+            <h2>Pokemon Randomizer!</h2>
+            <p>Number of Pokemon found: {foundPokeCount}</p>
           </div>
           
         </div>

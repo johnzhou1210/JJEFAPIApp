@@ -1,39 +1,43 @@
 import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { incrementFoundPokeCount } from '../app/pokeSlice.js';
 import "../styles.css";
 
-export default function App() {
-  const [pokemon, setPokemon] = useState(null);
+export default function PokeComponent() {
+    const dispatch = useDispatch();
+    const [pokemon, setPokemon] = useState(null);
 
-  //Function will generate random number between 1 and 151
-  function getRandomPokemonId() {
-    return Math.floor(Math.random() * 151) + 1;
-  }
+    //Function will generate random number between 1 and 151
+    function getRandomPokemonId() {
+        return Math.floor(Math.random() * 151) + 1;
+    }
 
-  //Function will capitalize the first letter of a string
-  //used for pokemon name
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
+    //Function will capitalize the first letter of a string
+    //used for Pokemon name
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
-  //Function used to fetch a random pokemon using the API
-  function fetchRandomPokemon() {
-    //Generate a random Pokemon ID between 1 and 152
-    const randomPokemonId = getRandomPokemonId();
-    //URL used for the Pokemon API request
-    const url = `https://pokeapi.co/api/v2/pokemon/${randomPokemonId}`;
+    //Function used to fetch a random Pokemon using the API
+    function fetchRandomPokemon() {
+        //Generate a random Pokemon ID between 1 and 152
+        const randomPokemonId = getRandomPokemonId();
+        //URL used for the Pokemon API request
+        const url = `https://pokeapi.co/api/v2/pokemon/${randomPokemonId}`;
 
-    //Fetch the data from the API
-    fetch(url)
-      .then((res) => res.json())
-      .then((result) => {
-        //Retrieve the name and image URL from the API
-        const newPokemon = {
-          name: capitalizeFirstLetter(result.name),
-          image: result.sprites["front_default"],
-        };
-        setPokemon(newPokemon);
-      });
-  }
+        //Fetch the data from the API
+        fetch(url)
+            .then((res) => res.json())
+            .then((result) => {
+                //Retrieve the name and image URL from the API
+                const newPokemon = {
+                    name: capitalizeFirstLetter(result.name),
+                    image: result.sprites["front_default"],
+                };
+                setPokemon(newPokemon);
+                dispatch(incrementFoundPokeCount()); //Dispatch the action
+            });
+    }
 
     return (
         <div className="App">
@@ -58,5 +62,4 @@ export default function App() {
             </div>
         </div>
     );
-
 }
