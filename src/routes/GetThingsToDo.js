@@ -1,30 +1,21 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { showNextPhrase } from '../app/getThingsToDoSlice';
+
 import { useState, useEffect } from 'react';
 import "../styles.css";
 
 function GetThingsToDo() {
-  const [boredJSONData, setboredJSONData] = useState({
-    activity: null,
-    type: null,
-    participants: null,
-    price: null,
-    link: null,
-    key: null,
-    accessibility: null
-  });
+  const getBoredPhrase = useSelector((state) => state.boredPhrase.phrase);
+  const dispatch = useDispatch();
 
   const [typeInput, setTypeInput] = useState("");
-  const [activity, setActivity] = useState(null);
 
   const endpoint = "https://www.boredapi.com/api/activity?type=";
-
-  useEffect(() => {
-    setActivity(boredJSONData.activity);
-  }, [boredJSONData])
 
   function handleGetActivity() {
     fetch(endpoint + typeInput)
       .then(response => response.json())
-        .then(jsonData => setboredJSONData(jsonData))
+        .then(jsonData => dispatch(showNextPhrase(jsonData)))
           .catch(error => console.error(error));
   }
 
@@ -38,7 +29,7 @@ function GetThingsToDo() {
         Are you bored? Look Below!
       </h1>
       <div className='card-statement'>
-        {<div className='card-description'></div> && <p className='card-description'>{activity == null ? "Activity will appear here." : activity}</p>}
+        <p className='card-description'>{getBoredPhrase}</p>
       </div>
       <select className="card-large-button" onChange={changeSelection} value={typeInput}>
           <option value="">random</option> 
