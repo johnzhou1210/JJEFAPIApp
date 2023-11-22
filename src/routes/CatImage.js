@@ -5,7 +5,7 @@ import { fetchRandomCatImage } from "../app/catImageSlice.js";
 function CatImage() {
   const dispatch = useDispatch();
   const catImageUrl = useSelector((state) => state.catImage.catImageUrl);
-  const catImageCount = useSelector((state) => state.catImage.catImageCount);
+  
 
   const handleFetchRandomCatImage = () => {
     fetch("https://api.thecatapi.com/v1/images/search")
@@ -24,7 +24,7 @@ function CatImage() {
       <button className="card-large-button" onClick={handleFetchRandomCatImage}>
         Get Random Cat
       </button>
-      <p>Number of times cat pictures are shown: {catImageCount}</p>
+      
       {catImageUrl && (
         <div>
           <img
