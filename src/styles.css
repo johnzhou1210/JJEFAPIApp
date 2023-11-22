@@ -115,6 +115,7 @@
   height: 75dvh;
   background-color: rgb(232, 247, 255);
   border-radius: 25px;
+  overflow-y:scroll;
 }
 
 .card-element {

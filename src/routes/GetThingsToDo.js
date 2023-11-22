@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { showNextPhrase } from '../app/getThingsToDoSlice';
+import { showNextPhrase, showPreviousPhrases } from '../app/getThingsToDoSlice';
 
 import { useState, useEffect } from 'react';
 import "../styles.css";
@@ -17,6 +17,8 @@ function GetThingsToDo() {
       .then(response => response.json())
         .then(jsonData => dispatch(showNextPhrase(jsonData)))
           .catch(error => console.error(error));
+          
+    dispatch(showPreviousPhrases(getBoredPhrase));
   }
 
   function changeSelection(selection) {
